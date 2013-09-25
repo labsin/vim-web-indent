@@ -103,6 +103,9 @@ call <SID>HtmlIndentPush('u')
 call <SID>HtmlIndentPush('ul')
 call <SID>HtmlIndentPush('var')
 
+call <SID>HtmlIndentPush('li')
+
+
 
 " [-- <ELEMENT ? O O ...> --]
 if !exists('g:html_indent_strict')
