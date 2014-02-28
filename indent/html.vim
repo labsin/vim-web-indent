@@ -104,7 +104,6 @@ call <SID>HtmlIndentPush('ul')
 call <SID>HtmlIndentPush('var')
 
 "HTML5 tags
-call <SID>HtmlIndentPush('li')
 call <SID>HtmlIndentPush('article')
 call <SID>HtmlIndentPush('aside')
 call <SID>HtmlIndentPush('bdi')
@@ -133,6 +132,10 @@ call <SID>HtmlIndentPush('summary')
 call <SID>HtmlIndentPush('time')
 call <SID>HtmlIndentPush('track')
 call <SID>HtmlIndentPush('video')
+
+" some tags which I also want to indent.
+call <SID>HtmlIndentPush('li')
+call <SID>HtmlIndentPush('p')
 
 
 
