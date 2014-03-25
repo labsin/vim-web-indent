@@ -22,7 +22,7 @@ endif
 
 " [-- local settings (must come before aborting the script) --]
 setlocal indentexpr=HtmlIndentGetter(v:lnum)
-setlocal indentkeys=o,O,*<Return>,<>>,{,}
+setlocal indentkeys=o,O
 
 
 if exists('g:html_indent_tags')
