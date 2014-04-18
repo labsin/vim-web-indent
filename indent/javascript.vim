@@ -19,7 +19,7 @@ if !exists("g:js_indent_log")
 endif
 
 setlocal indentexpr=GetJsIndent(v:lnum)
-setlocal indentkeys=o,O
+" setlocal indentkeys=o,O
 
 setlocal cindent
 setlocal autoindent
@@ -55,7 +55,7 @@ endfunction
 function! s:IsComment(lnum)
 	let line = getline(a:lnum)
 
-	return s:IsInComment(a:lnum, 1) && s:IsInComment(a:lnum, strlen(line)) "Doesn't absolutely work.  Only Probably!
+	return s:IsInComment(a:lnum, 1) " && s:IsInComment(a:lnum, strlen(line)) 
 endfunction
 
 
@@ -233,6 +233,11 @@ endfunction
 " 3. Indenter
 " ===========
 function! GetJsIndent(lnum)
+    " for indent in comment lines
+    if s:IsComment(a:lnum)
+        return indent(a:lnum - 1)
+    endif
+
 	" Grab the first non-comment line prior to this line
 	let pnum = s:GetNonCommentLine(a:lnum-1)
 
