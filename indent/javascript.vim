@@ -55,7 +55,7 @@ endfunction
 function! s:IsComment(lnum)
 	let line = getline(a:lnum)
 
-	return s:IsInComment(a:lnum, 1) " && s:IsInComment(a:lnum, strlen(line)) 
+	return s:IsInComment(a:lnum, 1) && s:IsInComment(a:lnum, strlen(line)) 
 endfunction
 
 
