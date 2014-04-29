@@ -7,11 +7,12 @@
 " =================
 
 " Only load one indent script per buffer
-if exists('b:did_indent')
-  finish
-endif
+" comment it temporily
+"if exists('b:did_indent')
+  "finish
+"endif
 
-let b:did_indent = 1
+"let b:did_indent = 1
 
 " Set the global log variable 1 = logging enabled, 0 = logging disabled
 if !exists("g:js_indent_log")
@@ -235,7 +236,12 @@ endfunction
 function! GetJsIndent(lnum)
     " for indent in comment lines
     if s:IsComment(a:lnum)
-        return indent(a:lnum - 1)
+        let mpnum = a:lnum - 1
+        if mpnum < 0
+            return 0
+        endif
+
+        return indent(mpnum)
     endif
 
 	" Grab the first non-comment line prior to this line
