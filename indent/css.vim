@@ -5,10 +5,10 @@
 " Maintainer:       Nikolai Weibull <now@bitwi.se>
 " Latest Revision:  2010-12-22
  
-if exists("b:did_indent")
+if exists("b:did_css_indent")
   finish
 endif
-let b:did_indent = 1
+let b:did_css_indent = 1
  
 setlocal indentexpr=GetCSSIndent()
 setlocal indentkeys=0{,0},!^F,o,O
