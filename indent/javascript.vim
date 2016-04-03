@@ -227,7 +227,7 @@ endfunction
 " Logs a message to the stdout.
 function! s:Log(msg)
 	if g:js_indent_log
-		echo "LOG: " . a:msg
+		echom "LOG: " . a:msg
 	endif
 endfunction
 
